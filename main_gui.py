@@ -118,7 +118,12 @@ def run():
             if(ret):
                 process_target_img(source_face=source_face)
                 out.write(target_img)
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
+            else:
+                break
         out.release()
+        
         return
 
 # 创建Frame组件
